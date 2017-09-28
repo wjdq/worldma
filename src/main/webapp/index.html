@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World码</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .ck {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<nav aria-label="...">
+    <ul class="pager">
+        <li class="next"><a id="home" target="_blank">home <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="ck">
+        <div id="error" class="alert alert-warning alert-dismissible text-center" role="alert" hidden="hidden">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <strong>无法获取二维码!</strong>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-12 col-md-12" style="height: 210px">
+                <img id="qrcode" style="width: 210px;height: 210px"/>
+            </div>
+        </div>
+        <div class="row text-center" style="margin-top: 25px">
+            <div class="col-xs-12 col-md-12">
+                <p>厉害了<strong>World码</strong></p>
+            </div>
+        </div>
+        <div class="row text-center" style="margin-top: 20px">
+            <div class="col-xs-12 col-md-12">
+                <p id="WaitLogin">等待扫码中...</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var h = window.location.host;
+    $("#home").attr("href","http://"+ h +"/wm/home");
+    $().ready(function () {
+        function getQR() {
+            $.getJSON("/wx/getUUID", function (data) {
+                if (data.status == "0") {
+                    $("#qrcode").attr("src", "https://login.weixin.qq.com/qrcode/" + data.data);
+                } else {
+                    $("#error").removeAttr("hidden");
+                }
+            });
+        }
+
+        getQR();
+    });
+    //    var ws = null;
+    //    $().ready(function connect() {
+    //        var target = 'ws://localhost:8091/worldma';
+    //        if ('WebSocket' in window) {
+    //            ws = new WebSocket(target);
+    //        } else if ('MozWebSocket' in window) {
+    //            ws = new MozWebSocket(target);
+    //        } else {
+    //            alert('此浏览器不支持WebSocket，请将浏览器升级到最新版');
+    //            return;
+    //        }
+    //        ws.onopen = function () {
+    //            console.log('WebSocket 连接以打开');
+    //
+    //        };
+    //        ws.onmessage = function (event) {
+    //            if (event.data == "等待扫码...") {
+    //                $("#WaitLogin").html("等待扫码中...")
+    //            } else if (event.data == "正在执行任务，请稍等...") {
+    //                $("#WaitLogin").html("正在执行任务，请稍等...")
+    //            } else if (event.data.length == 12) {
+    //                $("#qrcode").attr('src', "https://login.weixin.qq.com/qrcode/" + event.data);
+    //                ws.send(event.data);
+    //                console.log('从服务器接收到的消息: ' + event.data);
+    //            } else {
+    //                alert("获取二维码失败")
+    //            }
+    //
+    //        };
+    //        ws.onclose = function (event) {
+    //            console.log('WebSocket 连接以关闭');
+    //        };
+    //    });
+
+    //刷新或关闭浏览器响应事件
+    //    $(window).unload(function () {
+    //        if (ws != null) {
+    //            ws.close();
+    //            ws = null;
+    //        } else {
+    //            console.log("没有建立连接")
+    //        }
+    //    });
+</script>
+</body>
+</html>
