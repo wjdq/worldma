@@ -1,5 +1,6 @@
 // 文件上传
 jQuery(function() {
+    var h = window.location.host;
     var $ = jQuery,
         $list = $('#thelist'),
         $btn = $('#ctlBtn'),
@@ -13,7 +14,7 @@ jQuery(function() {
         // swf文件路径
         // swf: BASE_URL + '/js/Uploader.swf',
         // 文件接收服务端。
-        server: 'http://localhost:8091/manage/add_img_activity_msg',
+        server: 'http://'+ h +'/manage/add_img_activity_msg',
         // 选择文件的按钮。可选。
         // 内部根据当前运行是创建，可能是input元素，也可能是flash.
         pick: '#picker',
