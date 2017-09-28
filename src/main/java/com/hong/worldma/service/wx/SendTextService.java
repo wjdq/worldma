@@ -97,11 +97,11 @@ public class SendTextService {
                 }
 //                }
                 //线程睡眠2秒在进行群发 ,上线正式发布项目时取消以下注释
-//                try {
-//                    Thread.sleep(2000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             } else {
                 ///向移动端推送“扫码者已退出登录，或扫码者与微信服务器链接不正常，无法继续群发消息”信息
 
