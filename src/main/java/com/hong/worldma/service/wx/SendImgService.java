@@ -49,58 +49,58 @@ public class SendImgService {
                     //请求参数 消息体LocalID和ClientMsgId的值(时间戳+ 4 位随机值)
                     String lcID = "" + new Date().getTime() + (new Random().nextInt(9000) + 1000);
                     //------------------------------------------------------------上线注掉
-                    if (c.getUserName().equals("filehelper") || c.getUserName().equals("weixin")) {
-                        String reqBody = new StringBuffer().append("{\"BaseRequest\":{\"Uin\":\"").append(param.getP().getWxuin())
-                                .append("\",\"Sid\":\"").append(param.getP().getWxsid()).append("\",\"Skey\":\"").append(param.getP().getSkey())
-                                .append("\",\"DeviceID\":\"").append(WxJs.getDeviceID()).append("\"},").append("\"Msg\":{\"Type\":3,\"MediaId\":\"")
-                                .append(mediaId).append("\",\"Content\":\"\",").append("\"FromUserName\":\"").append(param.getUserName()).append("\",\"ToUserName\":\"")
-                                .append(c.getUserName()).append("\",\"LocalID\":").append(lcID).append(",\"ClientMsgId\":").append(lcID).append("},\"Scene\":0}")
-                                .toString();
-                        logger.info("----------------------SendImg--reqUrl--reqBody = " + reqBody);
-                        RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), reqBody);
-                        Request request = new Request.Builder()
-                                .url(url)
-                                .addHeader("Host", param.getHost())
-                                .addHeader("Accept", ReqHeader.Accept[1])
-                                .addHeader("Accept-Language", ReqHeader.Accept_Language)
-                                .addHeader("Connection", ReqHeader.Connection)
-                                .addHeader("Referer", param.getReferer())
-                                .addHeader("user-Agent", ReqHeader.User_Agent)
-                                .addHeader("DNT", ReqHeader.DNT)
-                                .addHeader("Cookie", cookie)
-                                .post(body)
-                                .build();
-                        Response response = null;
-                        String result = null;
-                        try {
-                            response = okClient.newCall(request).execute();
-                            result = response.body().string();
-                            logger.info("----------------------SendImg--reqUrlResp = " + result);
-                            //解析SendImg的返回数据
-                            SendMsgResp sendMsgResp = JSON.parseObject(result, SendMsgResp.class);
-                            if (sendMsgResp.getBaseResponse().getRet().equals("0") && f.equals("y")) {
-                                ClientFriends clientFriends = new ClientFriends();
-                                clientFriends.setCity(c.getProvince() + "-" + c.getCity());
-                                clientFriends.setNickName(c.getNickName());
-                                clientFriends.getUserName();
-                                clientFriends.setSex(c.getSex());
-                                clientFriends.setRemarkName(c.getRemarkName());
-                                //添加到消息发送成功的集合中
-                                contactAndFriends.getSendMsgSuccess().add(clientFriends);
-                            } else if (!sendMsgResp.getBaseResponse().getRet().equals("0") && f.equals("y")) {
-                                ClientFriends clientFriends = new ClientFriends();
-                                clientFriends.setCity(c.getProvince() + "-" + c.getCity());
-                                clientFriends.setNickName(c.getNickName());
-                                clientFriends.getUserName();
-                                clientFriends.setSex(c.getSex());
-                                clientFriends.setRemarkName(c.getRemarkName());
-                                //添加到消息发送失败的集合中
-                                contactAndFriends.getSendMsgFail().add(clientFriends);
-                            }
-                        } catch (IOException e) {
-                            logger.error("----------------------SendImg--reqUrlERROE", e);
+//                    if (c.getUserName().equals("filehelper") || c.getUserName().equals("weixin")) {
+                    String reqBody = new StringBuffer().append("{\"BaseRequest\":{\"Uin\":\"").append(param.getP().getWxuin())
+                            .append("\",\"Sid\":\"").append(param.getP().getWxsid()).append("\",\"Skey\":\"").append(param.getP().getSkey())
+                            .append("\",\"DeviceID\":\"").append(WxJs.getDeviceID()).append("\"},").append("\"Msg\":{\"Type\":3,\"MediaId\":\"")
+                            .append(mediaId).append("\",\"Content\":\"\",").append("\"FromUserName\":\"").append(param.getUserName()).append("\",\"ToUserName\":\"")
+                            .append(c.getUserName()).append("\",\"LocalID\":").append(lcID).append(",\"ClientMsgId\":").append(lcID).append("},\"Scene\":0}")
+                            .toString();
+                    logger.info("----------------------SendImg--reqUrl--reqBody = " + reqBody);
+                    RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), reqBody);
+                    Request request = new Request.Builder()
+                            .url(url)
+                            .addHeader("Host", param.getHost())
+                            .addHeader("Accept", ReqHeader.Accept[1])
+                            .addHeader("Accept-Language", ReqHeader.Accept_Language)
+                            .addHeader("Connection", ReqHeader.Connection)
+                            .addHeader("Referer", param.getReferer())
+                            .addHeader("user-Agent", ReqHeader.User_Agent)
+                            .addHeader("DNT", ReqHeader.DNT)
+                            .addHeader("Cookie", cookie)
+                            .post(body)
+                            .build();
+                    Response response = null;
+                    String result = null;
+                    try {
+                        response = okClient.newCall(request).execute();
+                        result = response.body().string();
+                        logger.info("----------------------SendImg--reqUrlResp = " + result);
+                        //解析SendImg的返回数据
+                        SendMsgResp sendMsgResp = JSON.parseObject(result, SendMsgResp.class);
+                        if (sendMsgResp.getBaseResponse().getRet().equals("0") && f.equals("y")) {
+                            ClientFriends clientFriends = new ClientFriends();
+                            clientFriends.setCity(c.getProvince() + "-" + c.getCity());
+                            clientFriends.setNickName(c.getNickName());
+                            clientFriends.getUserName();
+                            clientFriends.setSex(c.getSex());
+                            clientFriends.setRemarkName(c.getRemarkName());
+                            //添加到消息发送成功的集合中
+                            contactAndFriends.getSendMsgSuccess().add(clientFriends);
+                        } else if (!sendMsgResp.getBaseResponse().getRet().equals("0") && f.equals("y")) {
+                            ClientFriends clientFriends = new ClientFriends();
+                            clientFriends.setCity(c.getProvince() + "-" + c.getCity());
+                            clientFriends.setNickName(c.getNickName());
+                            clientFriends.getUserName();
+                            clientFriends.setSex(c.getSex());
+                            clientFriends.setRemarkName(c.getRemarkName());
+                            //添加到消息发送失败的集合中
+                            contactAndFriends.getSendMsgFail().add(clientFriends);
                         }
+                    } catch (IOException e) {
+                        logger.error("----------------------SendImg--reqUrlERROE", e);
                     }
+//                    }
                     //线程睡眠2秒在进行群发 ,上线正式发布项目时取消以下注释
 //                    try {
 //                        Thread.sleep(2000);

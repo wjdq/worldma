@@ -47,7 +47,7 @@ public class FilterContactService {
             }
             //过滤掉以下好友
             //c.getUserName().equals("filehelper") || c.getUserName().equals("weixin") ||
-            if (c.getNickName().equals("QQ安全中心") || c.getUserName().equals(param.getUserName())) {
+            if (c.getUserName().equals("filehelper") || c.getUserName().equals("weixin") || c.getNickName().equals("QQ安全中心") || c.getUserName().equals(param.getUserName())) {
                 iterator.remove();
                 //筛选群组
             }else if (c.getUserName().startsWith("@@")){
