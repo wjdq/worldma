@@ -32,7 +32,13 @@ World码是一款微信扫码群发软件，由程序开发者hong基于微信�
 worldma.properties和logback.xml中图片和日志存储路径<br />
 
 
-# “world码”联系方式
+# “world码”联系方式（面向“World码”扫码群发商户）
+<br />
+微信：317430678<br />
+<br />
+<br />
+
+# “world码”联系方式（面向程序员技术交流）
 
 ![hong](https://github.com/shuicheng/worldma/raw/master/img/worldma.jpg)  
 
