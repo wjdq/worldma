@@ -57,8 +57,11 @@ jQuery(function() {
         $percent.css( 'width', percentage * 100 + '%' );
     });
 
-    uploader.on( 'uploadSuccess', function( file ) {
+    uploader.on( 'uploadSuccess', function( file, response) {
         $( '#'+file.id ).find('p.state').text('已上传');
+        $('#activityMsg').modal('hide')
+        $("#ImgTextMsg").append("<tr><td class=\"text-center\">" + response.data.id + "</td><td>" + response.data.msg + "</td><td class=\"text-center\">图片消息</td><td class=\"text-center\"><button type=\"button\" class=\"btn btn-success btn-xs msg-status\" value=\"1\">允许发送</button></td><td class=\"text-center\">最新发布</td><td class=\"text-center\"><button type=\"button\" class=\"btn btn-danger btn-xs delete_msg\" value=\""+ response.data.id+"\">删除</button></td></tr>");
+
     });
 
     uploader.on( 'uploadError', function( file ) {

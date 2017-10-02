@@ -18,8 +18,6 @@ public class ActivityMsg  extends BaseEntity{
     private String status;
     //消息创建的时间
     private Date createtime;
-    //添加消息的用户账号
-    private String user_number;
 
     public Integer getId() {
         return id;
@@ -61,11 +59,14 @@ public class ActivityMsg  extends BaseEntity{
         this.createtime = createtime;
     }
 
-    public String getUser_number() {
-        return user_number;
-    }
-
-    public void setUser_number(String user_number) {
-        this.user_number = user_number;
+    @Override
+    public String toString() {
+        return "ActivityMsg{" +
+                "id=" + id +
+                ", msg='" + msg + '\'' +
+                ", type='" + type + '\'' +
+                ", status='" + status + '\'' +
+                ", createtime=" + createtime +
+                '}';
     }
 }

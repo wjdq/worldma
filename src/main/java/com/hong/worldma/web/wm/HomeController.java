@@ -21,4 +21,14 @@ public class HomeController {
     public String activityMsg(){
         return "activity_msg";
     }
+
+    @RequestMapping("/see_sendStatus")
+    public String sendStatus(){
+        return "client";
+    }
+
+    @RequestMapping("/about")
+    public String about(){
+        return "about";
+    }
 }

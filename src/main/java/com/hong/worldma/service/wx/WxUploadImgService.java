@@ -62,6 +62,7 @@ public class WxUploadImgService {
             }
         } catch (IOException e) {
             logger.error("----------WxUploadImg---------获得图片的类型错误------无法上传图片", e);
+            return null;
         }
         logger.info("------------WxUploadImg----------------文件类型= " + mediaType);
         RequestBody fileBody = RequestBody.create(MediaType.parse(mediaType), file);

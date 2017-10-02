@@ -100,13 +100,9 @@ public class WxSyncService {
             if (skmBody.equals("first")) {
                 //获取并解析响应头中的Set-Cookie信息
                 List<String> cookieList = response.headers("Set-Cookie");
-//            for (String c:cookieList) {
-//                        System.out.println("---------cookieList--------" + c);
-//                    }
                 String wxPluginKey = cookieList.get(1).split(";")[0];
                 param.getCv().setWxpluginkey(wxPluginKey);
             }
-//            System.out.println("----------------- wxpluginkey = " + wxPluginKey);
         } catch (IOException e) {
             logger.error("----------------------WxSync--reqUrlERROE", e);
         }

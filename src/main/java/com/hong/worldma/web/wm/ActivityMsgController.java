@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-
 /**
  * @Description:
  * @Author: hong
@@ -45,7 +43,6 @@ public class ActivityMsgController {
 
     @RequestMapping(value="/delete_activity_msg", method = RequestMethod.POST)
     public ServerResponse<String> deleteActivityMsg(@RequestParam(value="activityMsgID",required=true,defaultValue="0") int id){
-        System.out.println("------------- id = " + id);
         return activityMsg.deleteActivityMsg(id);
     }
 }

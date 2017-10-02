@@ -11,7 +11,6 @@ public class ActivityImgPath {
     private Integer id;
     private String activity_img_path;
     private Integer activity_msg_id;
-    private String user_number;
 
     public Integer getId() {
         return id;
@@ -35,13 +34,5 @@ public class ActivityImgPath {
 
     public void setActivity_msg_id(Integer activity_msg_id) {
         this.activity_msg_id = activity_msg_id;
-    }
-
-    public String getUser_number() {
-        return user_number;
-    }
-
-    public void setUser_number(String user_number) {
-        this.user_number = user_number;
     }
 }

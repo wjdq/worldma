@@ -33,8 +33,6 @@ public class WaitLoginService {
     public void waitLoginReq(String uuid){
         //构建请求方法参数对象
         ReqMethodParam param = new ReqMethodParam();
-//        param.setPvi(WxJs.getPviOrSi(""));
-//        param.setSi(WxJs.getPviOrSi("s"));
         //请求地址
         String reqUrl = new StringBuffer().append(ReqUrl.login)
                 .append("?loginicon=true&uuid=")

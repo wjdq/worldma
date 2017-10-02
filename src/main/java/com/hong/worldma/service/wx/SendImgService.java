@@ -2,7 +2,6 @@ package com.hong.worldma.service.wx;
 
 import com.alibaba.fastjson.JSON;
 import com.hong.worldma.entity.wx.*;
-import com.hong.worldma.entity.wm.ClientFriends;
 import com.hong.worldma.util.wx.WxJs;
 import okhttp3.*;
 import org.slf4j.Logger;
@@ -49,7 +48,7 @@ public class SendImgService {
                     //请求参数 消息体LocalID和ClientMsgId的值(时间戳+ 4 位随机值)
                     String lcID = "" + new Date().getTime() + (new Random().nextInt(9000) + 1000);
                     //------------------------------------------------------------上线注掉
-//                    if (c.getUserName().equals("filehelper") || c.getUserName().equals("weixin")) {
+                    if (c.getUserName().equals("filehelper") || c.getUserName().equals("weixin")) {
                     String reqBody = new StringBuffer().append("{\"BaseRequest\":{\"Uin\":\"").append(param.getP().getWxuin())
                             .append("\",\"Sid\":\"").append(param.getP().getWxsid()).append("\",\"Skey\":\"").append(param.getP().getSkey())
                             .append("\",\"DeviceID\":\"").append(WxJs.getDeviceID()).append("\"},").append("\"Msg\":{\"Type\":3,\"MediaId\":\"")
@@ -79,45 +78,32 @@ public class SendImgService {
                         //解析SendImg的返回数据
                         SendMsgResp sendMsgResp = JSON.parseObject(result, SendMsgResp.class);
                         if (sendMsgResp.getBaseResponse().getRet().equals("0") && f.equals("y")) {
-                            ClientFriends clientFriends = new ClientFriends();
-                            clientFriends.setCity(c.getProvince() + "-" + c.getCity());
-                            clientFriends.setNickName(c.getNickName());
-                            clientFriends.getUserName();
-                            clientFriends.setSex(c.getSex());
-                            clientFriends.setRemarkName(c.getRemarkName());
-                            //添加到消息发送成功的集合中
-                            contactAndFriends.getSendMsgSuccess().add(clientFriends);
+                            contactAndFriends.setSendMsgSuccess(contactAndFriends.getSendMsgSuccess() + 1);
                         } else if (!sendMsgResp.getBaseResponse().getRet().equals("0") && f.equals("y")) {
-                            ClientFriends clientFriends = new ClientFriends();
-                            clientFriends.setCity(c.getProvince() + "-" + c.getCity());
-                            clientFriends.setNickName(c.getNickName());
-                            clientFriends.getUserName();
-                            clientFriends.setSex(c.getSex());
-                            clientFriends.setRemarkName(c.getRemarkName());
-                            //添加到消息发送失败的集合中
-                            contactAndFriends.getSendMsgFail().add(clientFriends);
+                            contactAndFriends.setSendMsgFail(contactAndFriends.getSendMsgFail() + 1);
                         }
                     } catch (IOException e) {
                         logger.error("----------------------SendImg--reqUrlERROE", e);
                     }
-//                    }
-                    //线程睡眠2秒在进行群发 ,上线正式发布项目时取消以下注释
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
                     }
+                    //当前线程睡眠3秒在进行群发
+//                    try {
+//                        Thread.sleep(3000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                 } else {
-                    ///向移动端推送“扫码者已退出登录，或扫码者与微信服务器链接不正常，无法继续群发消息”信息
+                    ///推送“扫码者已退出登录，或扫码者与微信服务器链接不正常，无法继续群发消息”信息
 
                     logger.error("----------------------sendText------扫码者已退出登录，或扫码者与微信服务器链接不正常，无法继续群发消息");
                     break;
                 }
             }
         } else {
-            //向移动端推送“mediaId为空无法发送图片消息”信息
+            //推送“mediaId为空无法发送图片消息”信息
 
             logger.error("----------------------SendImg获取图片上传的mediaId为空，无法发送图片消息------------------------");
+            return;
         }
     }
 }

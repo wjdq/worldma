@@ -27,19 +27,19 @@ public class FilterContactService {
     private SendMsgService sendMsgService;
 
     private ContactAndFriends getFilterContactList(ReqMethodParam param) {
-        //获取从GetContactService响应中得到的好友、群组、公众号列表数据
+        //获取从GetContactService响应中得到的好友列表数据
         List<Contact> memberList = param.getContactResp().getMemberList();
-        //保存好友、群组、公众号筛选数据的ContactAndFriends类
+        //保存好友筛选数据的ContactAndFriends类
         ContactAndFriends contactAndFriends = new ContactAndFriends();
         Iterator<Contact> iterator = memberList.iterator();
-        //进行分组筛选
+        //筛选
         while (iterator.hasNext()) {
             Contact c = iterator.next();
             if (c.getUserName().equals(param.getUserName())) {
                 //把扫码人的信息添加到 ContactAndFriends中
                 Client client = new Client();
                 client.setCity(c.getProvince() + "-" + c.getCity());
-                client.setNickName(c.getNickName());
+                client.setNick_name(c.getNickName());
                 client.setSex(c.getSex());
                 client.setUin(param.getUin());
                 contactAndFriends.setClient(client);
@@ -47,31 +47,15 @@ public class FilterContactService {
             }
             //过滤掉以下好友
             //c.getUserName().equals("filehelper") || c.getUserName().equals("weixin") ||
-            if (c.getUserName().equals("filehelper") || c.getUserName().equals("weixin") || c.getNickName().equals("QQ安全中心") || c.getUserName().equals(param.getUserName())) {
+            if (c.getNickName().equals("QQ安全中心") || c.getUserName().equals(param.getUserName())) {
                 iterator.remove();
-                //筛选群组
-            }else if (c.getUserName().startsWith("@@")){
-                //将群组添加到GroupList中
-                contactAndFriends.getGroupList().add(c);
-                //筛选公众号
-            }else if (c.getUserName().startsWith("@") && c.getContactFlag().equals("3")){
-                //将公众号添加到publicList中
-                contactAndFriends.getPublicList().add(c);
-            }else {
-                //将好友列表存放到memberList中
-                contactAndFriends.getMemberList().add(c);
             }
         }
         //将好友的总数量存放到 ContactAndFriends
         contactAndFriends.setMemberCount(param.getContactResp().getMemberCount());
         //将过滤后的好友列表存放到ContactAndFriends
-//        contactAndFriends.setMemberList(memberList);
+        contactAndFriends.setMemberList(memberList);
         param.setContactResp(null);
-//        sendImgService.sendImg(param, contactAndFriends, "");
-//        for (Contact c : memberList) {
-//            System.out.println("--------------nickName = " + c.getNickName() + " --------------- userName = " + c.getUserName());
-//        }
-        //将ContactAndFriends返回给移动端进行处理
         return contactAndFriends;
     }
 

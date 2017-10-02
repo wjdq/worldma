@@ -23,12 +23,12 @@
     </style>
 </head>
 <body>
-<nav aria-label="...">
-    <ul class="pager">
-        <li class="next"><a id="home" target="_blank">home <span aria-hidden="true">&rarr;</span></a></li>
-    </ul>
-</nav>
 <div class="container">
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="next"><a id="home" target="_blank">home <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
     <div class="ck">
         <div id="error" class="alert alert-warning alert-dismissible text-center" role="alert" hidden="hidden">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
@@ -42,7 +42,7 @@
         </div>
         <div class="row text-center" style="margin-top: 25px">
             <div class="col-xs-12 col-md-12">
-                <p>厉害了<strong>World码</strong></p>
+                <p><strong>World码</strong></p>
             </div>
         </div>
         <div class="row text-center" style="margin-top: 20px">
@@ -71,49 +71,6 @@
 
         getQR();
     });
-    //    var ws = null;
-    //    $().ready(function connect() {
-    //        var target = 'ws://localhost:8091/worldma';
-    //        if ('WebSocket' in window) {
-    //            ws = new WebSocket(target);
-    //        } else if ('MozWebSocket' in window) {
-    //            ws = new MozWebSocket(target);
-    //        } else {
-    //            alert('此浏览器不支持WebSocket，请将浏览器升级到最新版');
-    //            return;
-    //        }
-    //        ws.onopen = function () {
-    //            console.log('WebSocket 连接以打开');
-    //
-    //        };
-    //        ws.onmessage = function (event) {
-    //            if (event.data == "等待扫码...") {
-    //                $("#WaitLogin").html("等待扫码中...")
-    //            } else if (event.data == "正在执行任务，请稍等...") {
-    //                $("#WaitLogin").html("正在执行任务，请稍等...")
-    //            } else if (event.data.length == 12) {
-    //                $("#qrcode").attr('src', "https://login.weixin.qq.com/qrcode/" + event.data);
-    //                ws.send(event.data);
-    //                console.log('从服务器接收到的消息: ' + event.data);
-    //            } else {
-    //                alert("获取二维码失败")
-    //            }
-    //
-    //        };
-    //        ws.onclose = function (event) {
-    //            console.log('WebSocket 连接以关闭');
-    //        };
-    //    });
-
-    //刷新或关闭浏览器响应事件
-    //    $(window).unload(function () {
-    //        if (ws != null) {
-    //            ws.close();
-    //            ws = null;
-    //        } else {
-    //            console.log("没有建立连接")
-    //        }
-    //    });
 </script>
 </body>
 </html>

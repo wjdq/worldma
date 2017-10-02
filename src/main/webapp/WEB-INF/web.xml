@@ -10,12 +10,6 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
-    <listener>
-        <listener-class>
-            org.springframework.security.web.session.HttpSessionEventPublisher
-        </listener-class>
-    </listener>
-
     <!-- 过滤字符编码方式 -->
     <filter>
         <filter-name>EncodingFilter</filter-name>
@@ -34,15 +28,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <filter>
-        <filter-name>springSecurityFilterChain</filter-name>
-        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>springSecurityFilterChain</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
     <!-- 配置DispatcherServlet -->
     <servlet>
         <servlet-name>WorldMaServlet</servlet-name>
@@ -62,9 +47,4 @@
         <!-- 默认匹配所有的请求 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
-    <error-page>
-        <error-code>403</error-code>
-        <location>/WEB-INF/views/403.html</location>
-    </error-page>
 </web-app>

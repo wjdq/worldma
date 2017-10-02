@@ -10,17 +10,13 @@ import java.util.Date;
 public class Client extends BaseEntity{
     //各字段信息详见client表列字段描述
     private Integer id;
-    private String nickName;
+    private String nick_name;
     private String sex;
     private String city;
     private Integer friend_total;
     private String uin;
     private int send_success_count;
     private int send_fail_count;
-    private String user_number;
-    private Integer friend_count;
-    private Integer group_count;
-    private Integer public_count;
     private Integer count;
     private Date createtime;
 
@@ -32,12 +28,12 @@ public class Client extends BaseEntity{
         this.id = id;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNick_name() {
+        return nick_name;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNick_name(String nick_name) {
+        this.nick_name = nick_name;
     }
 
     public String getSex() {
@@ -87,39 +83,6 @@ public class Client extends BaseEntity{
     public void setSend_fail_count(int send_fail_count) {
         this.send_fail_count = send_fail_count;
     }
-
-    public String getUser_number() {
-        return user_number;
-    }
-
-    public void setUser_number(String user_number) {
-        this.user_number = user_number;
-    }
-
-    public Integer getFriend_count() {
-        return friend_count;
-    }
-
-    public void setFriend_count(Integer friend_count) {
-        this.friend_count = friend_count;
-    }
-
-    public Integer getGroup_count() {
-        return group_count;
-    }
-
-    public void setGroup_count(Integer group_count) {
-        this.group_count = group_count;
-    }
-
-    public Integer getPublic_count() {
-        return public_count;
-    }
-
-    public void setPublic_count(Integer public_count) {
-        this.public_count = public_count;
-    }
-
     public Integer getCount() {
         return count;
     }

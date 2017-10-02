@@ -2,7 +2,6 @@ package com.hong.worldma.entity.wx;
 
 
 import com.hong.worldma.entity.wm.Client;
-import com.hong.worldma.entity.wm.ClientFriends;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,14 +18,10 @@ public class ContactAndFriends {
     private int memberCount;
     //被过滤之后扫码客户好友列表
     private List<Contact> memberList = new ArrayList<>();
-    //被过滤之后扫码客户群组列表
-    private List<Contact> groupList = new ArrayList<>();
-    //被过滤之后扫码客户公众号列表
-    private List<Contact> publicList = new ArrayList<>();
-    //发送消息成功的好友列表
-    private List<ClientFriends> sendMsgSuccess = new ArrayList<>();
-    //发送消息失败的好友列表
-    private List<ClientFriends> sendMsgFail = new ArrayList<>();
+    //发送消息成功的好友数
+    private Integer sendMsgSuccess = 0;
+    //发送消息失败的好友数
+    private Integer sendMsgFail = 0;
 
     public Client getClient() {
         return client;
@@ -52,35 +47,19 @@ public class ContactAndFriends {
         this.memberList = memberList;
     }
 
-    public List<ClientFriends> getSendMsgSuccess() {
+    public Integer getSendMsgSuccess() {
         return sendMsgSuccess;
     }
 
-    public void setSendMsgSuccess(List<ClientFriends> sendMsgSuccess) {
+    public void setSendMsgSuccess(Integer sendMsgSuccess) {
         this.sendMsgSuccess = sendMsgSuccess;
     }
 
-    public List<ClientFriends> getSendMsgFail() {
+    public Integer getSendMsgFail() {
         return sendMsgFail;
     }
 
-    public void setSendMsgFail(List<ClientFriends> sendMsgFail) {
+    public void setSendMsgFail(Integer sendMsgFail) {
         this.sendMsgFail = sendMsgFail;
-    }
-
-    public List<Contact> getGroupList() {
-        return groupList;
-    }
-
-    public void setGroupList(List<Contact> groupList) {
-        this.groupList = groupList;
-    }
-
-    public List<Contact> getPublicList() {
-        return publicList;
-    }
-
-    public void setPublicList(List<Contact> publicList) {
-        this.publicList = publicList;
     }
 }

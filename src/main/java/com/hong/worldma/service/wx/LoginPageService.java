@@ -6,7 +6,6 @@ import com.hong.worldma.util.wx.ResolveSetCookie;
 import com.hong.worldma.entity.wx.CookieValues;
 import com.hong.worldma.entity.wx.LoginPageResp;
 import com.hong.worldma.entity.wx.ReqHeader;
-import com.hong.worldma.util.wx.WxJs;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -61,20 +60,14 @@ public class LoginPageService {
             logger.info("----------------------LoginPageResp--XMLRespData = " + loginPageResp.toString());
             param.setP(loginPageResp);
             if (loginPageResp.getRet().equals("0")) {
-                if (loginPageResp.getWxsid().indexOf("+") > 0 || loginPageResp.getWxsid().indexOf("/") > 0){
+                if (loginPageResp.getWxsid().indexOf("+") >= 0 || loginPageResp.getWxsid().indexOf("/") >= 0){
                     return "ERROR";
                 }
                 //获取并解析响应头中的Set-Cookie信息
                 List<String> cookieList = response.headers("Set-Cookie");
-//                    for (String c:cookieList) {
-//                        System.out.println("---------cookieList--------" + c);
-//                    }
                 CookieValues cv = new ResolveSetCookie().getCookie(cookieList);
                 logger.info("----------------------LoginPageResp--CookieRespData = " + cv.toString());
                 param.setCv(cv);
-                //第一次微信初始化请求------------------
-//                String deviceID = WxJs.getDeviceID();
-//                wxinitService.wxInit(param, deviceID);
                 //微信初始化请求------------------
                 wxinitService.wxInit(param);
                 //执行WxStatusNotifyService请求--------------------------
@@ -82,7 +75,7 @@ public class LoginPageService {
                 return "success";
             } else {
                 logger.error("-------------------LoginPage登录失败！---------" + loginPageResp.getMessage());
-                //向移动端推送无法登陆的消息  ----  loginPageResp.getMessage()
+                //推送无法登陆的消息  ----  loginPageResp.getMessage()
                 return "LoginERROR";
             }
 

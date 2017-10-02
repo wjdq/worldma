@@ -12,7 +12,6 @@ public class ClientCount {
     private Integer id;
     private Integer count;
     private String uin;
-    private String user_number;
     private Date createtime;
 
     public Integer getId() {
@@ -37,14 +36,6 @@ public class ClientCount {
 
     public void setUin(String uin) {
         this.uin = uin;
-    }
-
-    public String getUser_number() {
-        return user_number;
-    }
-
-    public void setUser_number(String user_number) {
-        this.user_number = user_number;
     }
 
     public Date getCreatetime() {
