@@ -25,8 +25,8 @@ World码是一款微信扫码群发软件，由程序开发者hong基于微信�
 1.安装Java JDK1.8，并设置环境变量<br />
 2.安装MySQL5.7， 用户名：root  密码：root，或者修改项目中的配置文件<br />
 3.创建名为worldma数据库，并导入worldma.sql文件<br />
-4.下载该项目后，找到apache-tomcat-8.5.20<br />
-5.然后找到apache-tomcat-8.5.20目录里面的bin目录，<br />
+4.下载该项目后，找到apache-tomcat-8.5.20.zip，并解压缩<br />
+5.然后找到解压缩后的apache-tomcat-8.5.20目录里面的bin目录，<br />
 然后在bin目录里面找到startup.bat，双击运行该startup.bat<br />
 6.运行起来后，浏览器地址栏输入：http://127.0.0.1:8091/<br />
 <br />
