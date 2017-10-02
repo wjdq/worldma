@@ -48,7 +48,7 @@ public class SendImgService {
                     //请求参数 消息体LocalID和ClientMsgId的值(时间戳+ 4 位随机值)
                     String lcID = "" + new Date().getTime() + (new Random().nextInt(9000) + 1000);
                     //------------------------------------------------------------上线注掉
-                    if (c.getUserName().equals("filehelper") || c.getUserName().equals("weixin")) {
+//                    if (c.getUserName().equals("filehelper") || c.getUserName().equals("weixin")) {
                     String reqBody = new StringBuffer().append("{\"BaseRequest\":{\"Uin\":\"").append(param.getP().getWxuin())
                             .append("\",\"Sid\":\"").append(param.getP().getWxsid()).append("\",\"Skey\":\"").append(param.getP().getSkey())
                             .append("\",\"DeviceID\":\"").append(WxJs.getDeviceID()).append("\"},").append("\"Msg\":{\"Type\":3,\"MediaId\":\"")
@@ -85,13 +85,13 @@ public class SendImgService {
                     } catch (IOException e) {
                         logger.error("----------------------SendImg--reqUrlERROE", e);
                     }
-                    }
-                    //当前线程睡眠3秒在进行群发
-//                    try {
-//                        Thread.sleep(3000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
 //                    }
+                    //当前线程睡眠3秒在进行群发
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 } else {
                     ///推送“扫码者已退出登录，或扫码者与微信服务器链接不正常，无法继续群发消息”信息
 
