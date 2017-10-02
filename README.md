@@ -42,7 +42,10 @@ worldma.properties和logback.xml中图片和日志存储路径<br />
 
 # “world码”联系方式
 <br />
-**微信号**：**317430678**<br />
+
+**微信号**：**317430678**
+
+<br />
 <br />
 <br />
 
