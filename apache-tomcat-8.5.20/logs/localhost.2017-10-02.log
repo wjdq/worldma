@@ -1,3 +1,0 @@
-02-Oct-2017 09:52:47.958 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log No Spring WebApplicationInitializer types detected on classpath
-02-Oct-2017 09:52:48.364 信息 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'WorldMaServlet'
-02-Oct-2017 09:53:35.468 信息 [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'WorldMaServlet'
