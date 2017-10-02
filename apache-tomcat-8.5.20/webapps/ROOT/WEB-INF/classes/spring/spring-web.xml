@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 加载worldma.properties-->
+    <context:property-placeholder location="classpath:worldma.properties" ignore-unresolvable="true"/>
+    <!-- 配置SpringMVC -->
+    <!-- 静态资源默认servlet配置 (1)加入对静态资源的处理：js,gif,png (2)允许使用"/"做整体映射-->
+    <mvc:default-servlet-handler/>
+    <mvc:resources location="/WEB-INF/img/" mapping="/img/**"/>
+    <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+    <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+
+    <!-- 配置jsp 显示ViewResolver-->
+    <bean
+    class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/views/"/>
+    <property name="suffix" value=".html"/>
+    </bean>
+
+    <!-- 扫描web相关的bean -->
+    <context:component-scan base-package="com.hong.worldma.web"/>
+    <!-- 支持文件上传 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="defaultEncoding" value="UTF-8"/>
+    <property name="resolveLazily" value="true"/>
+    <!--一次上传多个文件的总大小限制，1024*200即200k-->
+    <property name="maxUploadSize" value="18874368"/>
+    <property name="maxInMemorySize" value="1048576" />
+    </bean>
+    <!-- 开启SpringMVC注解模式-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="fastJsonConfig" ref="fastJsonConfig"/>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean id="fastJsonConfig" class="com.alibaba.fastjson.support.config.FastJsonConfig">
+        <!--   FastJson自定义配置...   -->
+        <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
+    </bean>
+</beans>

@@ -1,0 +1,126 @@
+02-Oct-2017 09:52:43.731 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.20
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 2 2017 21:35:49 UTC
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.20.0
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 7
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.1
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Java\jdk1.8.0_144\jre
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_144-b01
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\apache-tomcat-8.5.20
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\apache-tomcat-8.5.20
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\apache-tomcat-8.5.20\conf\logging.properties
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Oct-2017 09:52:43.746 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Oct-2017 09:52:43.762 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Oct-2017 09:52:43.762 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\apache-tomcat-8.5.20
+02-Oct-2017 09:52:43.762 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\apache-tomcat-8.5.20
+02-Oct-2017 09:52:43.762 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\apache-tomcat-8.5.20\temp
+02-Oct-2017 09:52:43.762 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.12] using APR version [1.5.2].
+02-Oct-2017 09:52:43.762 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+02-Oct-2017 09:52:43.762 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+02-Oct-2017 09:52:44.682 信息 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.0.2k  26 Jan 2017]
+02-Oct-2017 09:52:44.885 信息 [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8091"]
+02-Oct-2017 09:52:45.088 信息 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+02-Oct-2017 09:52:45.088 信息 [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 09:52:45.104 信息 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+02-Oct-2017 09:52:45.104 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1955 ms
+02-Oct-2017 09:52:45.135 信息 [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-Oct-2017 09:52:45.135 信息 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.20
+02-Oct-2017 09:52:45.166 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\apache-tomcat-8.5.20\webapps\ROOT]
+02-Oct-2017 09:52:47.584 信息 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 09:52:48.364 信息 [localhost-startStop-1] org.springframework.web.servlet.DispatcherServlet.initServletBean FrameworkServlet 'WorldMaServlet': initialization started
+02-Oct-2017 09:52:48.380 信息 [localhost-startStop-1] org.springframework.web.context.support.XmlWebApplicationContext.prepareRefresh Refreshing WebApplicationContext for namespace 'WorldMaServlet-servlet': startup date [Mon Oct 02 09:52:48 CST 2017]; root of context hierarchy
+02-Oct-2017 09:52:48.458 信息 [localhost-startStop-1] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from file [D:\apache-tomcat-8.5.20\webapps\ROOT\WEB-INF\classes\spring\spring-dao.xml]
+02-Oct-2017 09:52:48.879 信息 [localhost-startStop-1] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from file [D:\apache-tomcat-8.5.20\webapps\ROOT\WEB-INF\classes\spring\spring-service.xml]
+02-Oct-2017 09:52:49.097 信息 [localhost-startStop-1] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions Loading XML bean definitions from file [D:\apache-tomcat-8.5.20\webapps\ROOT\WEB-INF\classes\spring\spring-web.xml]
+02-Oct-2017 09:52:49.706 信息 [localhost-startStop-1] org.springframework.context.support.PropertySourcesPlaceholderConfigurer.loadProperties Loading properties file from class path resource [jdbc.properties]
+02-Oct-2017 09:52:49.737 信息 [localhost-startStop-1] org.springframework.context.support.PropertySourcesPlaceholderConfigurer.loadProperties Loading properties file from class path resource [worldma.properties]
+02-Oct-2017 09:52:52.124 信息 [localhost-startStop-1] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+02-Oct-2017 09:52:52.202 信息 [localhost-startStop-1] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler Mapped URL path [/img/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+02-Oct-2017 09:52:52.202 信息 [localhost-startStop-1] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+02-Oct-2017 09:52:52.217 信息 [localhost-startStop-1] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping.registerHandler Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+02-Oct-2017 09:52:52.420 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/manage/update_msg_status],methods=[POST]}" onto public com.hong.worldma.dto.ServerResponse<java.lang.String> com.hong.worldma.web.wm.ActivityMsgController.updateMsgStatus(java.lang.Integer,java.lang.String)
+02-Oct-2017 09:52:52.420 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/manage/get_activity_info],methods=[GET]}" onto public com.github.pagehelper.PageInfo<com.hong.worldma.entity.wm.ActivityMsg> com.hong.worldma.web.wm.ActivityMsgController.getActivityInfo(com.hong.worldma.entity.wm.ActivityMsg)
+02-Oct-2017 09:52:52.420 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/manage/delete_activity_msg],methods=[POST]}" onto public com.hong.worldma.dto.ServerResponse<java.lang.String> com.hong.worldma.web.wm.ActivityMsgController.deleteActivityMsg(int)
+02-Oct-2017 09:52:52.420 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/manage/add_text_activity_msg],methods=[POST]}" onto public com.hong.worldma.dto.ServerResponse<com.hong.worldma.entity.wm.ActivityMsg> com.hong.worldma.web.wm.ActivityMsgController.addTextActivityMsg(com.hong.worldma.entity.wm.ActivityMsg)
+02-Oct-2017 09:52:52.436 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/manage/add_img_activity_msg],methods=[POST]}" onto public com.hong.worldma.dto.ServerResponse<com.hong.worldma.entity.wm.ActivityMsg> com.hong.worldma.web.wm.ActivityMsgController.addImgActivityMsg(org.springframework.web.multipart.MultipartFile)
+02-Oct-2017 09:52:52.436 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/client/get_all_client],methods=[GET]}" onto public com.github.pagehelper.PageInfo<com.hong.worldma.entity.wm.Client> com.hong.worldma.web.wm.ClientController.getAllClient(com.hong.worldma.entity.wm.Client)
+02-Oct-2017 09:52:52.436 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/wm/home]}" onto public java.lang.String com.hong.worldma.web.wm.HomeController.home()
+02-Oct-2017 09:52:52.451 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/wm/add_activityMsg]}" onto public java.lang.String com.hong.worldma.web.wm.HomeController.activityMsg()
+02-Oct-2017 09:52:52.451 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/wm/see_sendStatus]}" onto public java.lang.String com.hong.worldma.web.wm.HomeController.sendStatus()
+02-Oct-2017 09:52:52.451 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/wm/about]}" onto public java.lang.String com.hong.worldma.web.wm.HomeController.about()
+02-Oct-2017 09:52:52.451 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.register Mapped "{[/wx/getUUID]}" onto public com.hong.worldma.dto.ServerResponse<java.lang.String> com.hong.worldma.web.wx.CutInController.qrCode()
+02-Oct-2017 09:52:52.716 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache Looking for @ControllerAdvice: WebApplicationContext for namespace 'WorldMaServlet-servlet': startup date [Mon Oct 02 09:52:48 CST 2017]; root of context hierarchy
+02-Oct-2017 09:52:52.794 信息 [localhost-startStop-1] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.initControllerAdviceCache Looking for @ControllerAdvice: WebApplicationContext for namespace 'WorldMaServlet-servlet': startup date [Mon Oct 02 09:52:48 CST 2017]; root of context hierarchy
+02-Oct-2017 09:52:52.982 信息 [localhost-startStop-1] org.springframework.web.servlet.DispatcherServlet.initServletBean FrameworkServlet 'WorldMaServlet': initialization completed in 4618 ms
+02-Oct-2017 09:52:52.997 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\apache-tomcat-8.5.20\webapps\ROOT] has finished in [7,831] ms
+02-Oct-2017 09:52:53.028 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8091"]
+02-Oct-2017 09:52:53.481 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 09:52:53.512 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 8416 ms
+02-Oct-2017 09:53:35.297 信息 [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+02-Oct-2017 09:53:35.297 信息 [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8091"]
+02-Oct-2017 09:53:35.390 信息 [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 09:53:35.468 信息 [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+02-Oct-2017 09:53:35.468 信息 [localhost-startStop-2] org.springframework.web.context.support.XmlWebApplicationContext.doClose Closing WebApplicationContext for namespace 'WorldMaServlet-servlet': startup date [Mon Oct 02 09:52:48 CST 2017]; root of context hierarchy
+02-Oct-2017 09:53:35.515 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.alibaba.druid.proxy.DruidDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+02-Oct-2017 09:53:35.531 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+02-Oct-2017 09:53:35.531 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+02-Oct-2017 09:53:35.531 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [OkHttp ConnectionPool] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Object.java:460)
+ okhttp3.ConnectionPool$1.run(ConnectionPool.java:67)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+02-Oct-2017 09:53:35.531 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [Okio Watchdog] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.Object.wait(Object.java:460)
+ okio.AsyncTimeout.awaitTimeout(AsyncTimeout.java:361)
+ okio.AsyncTimeout$Watchdog.run(AsyncTimeout.java:312)
+02-Oct-2017 09:53:35.531 警告 [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [pool-1-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.net.SocketInputStream.socketRead0(Native Method)
+ java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+ java.net.SocketInputStream.read(SocketInputStream.java:171)
+ java.net.SocketInputStream.read(SocketInputStream.java:141)
+ sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+ sun.security.ssl.InputRecord.read(InputRecord.java:503)
+ sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+ sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+ sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+ okio.Okio$2.read(Okio.java:139)
+ okio.AsyncTimeout$2.read(AsyncTimeout.java:237)
+ okio.RealBufferedSource.indexOf(RealBufferedSource.java:345)
+ okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:217)
+ okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:211)
+ okhttp3.internal.http1.Http1Codec.readResponseHeaders(Http1Codec.java:187)
+ okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:88)
+ okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+ okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:45)
+ okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+ okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+ okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+ okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+ okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+ okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+ okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+ okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:125)
+ okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+ okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+ okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+ okhttp3.RealCall.execute(RealCall.java:77)
+ com.hong.worldma.service.wx.WaitLoginService.waitLoginReq(WaitLoginService.java:60)
+ com.hong.worldma.service.wx.CutInService$1.run(CutInService.java:58)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+02-Oct-2017 09:53:35.546 信息 [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8091"]
+02-Oct-2017 09:53:35.546 信息 [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 09:53:35.546 信息 [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8091"]
+02-Oct-2017 09:53:35.546 信息 [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
