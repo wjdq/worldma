@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World码</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <table class="table table-bordered">
+        <button type="button" class="btn btn-info" style="margin-bottom: 20px;margin-top: 20px">扫码者信息
+        </button>
+        <thead>
+        <tr>
+            <th class="text-center">编号</th>
+            <th class="text-center">扫码者</th>
+            <th class="text-center">性别</th>
+            <th class="text-center">城市</th>
+            <th class="text-center">好友总数</th>
+            <th class="text-center">本次发送成功数</th>
+            <th class="text-center">本次发送失败数</th>
+            <th class="text-center">扫码次数</th>
+            <th class="text-center">扫码时间</th>
+        </tr>
+        </thead>
+        <tbody id="client">
+        </tbody>
+    </table>
+    <div class="pull-right">
+        <ul id='bp-3-element-sm-test'></ul>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-paginator.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function get_client() {
+        $.getJSON("/client/get_all_client",
+            function (data) {
+                $.each(data.list, function (i, obj) {
+                    var sex
+                    if (obj.sex == "1") {
+                        sex = "男";
+                    } else if (obj.sex == "2"){
+                        sex = "女";
+                    }else {
+                        sex = "保密";
+                    }
+                    var see = "<a target='_blank' href='http://127.0.0.1:8091/client_friends?client_id="+obj.id+"'>查看</a>"
+
+                    $("#client").append("<tr><td class=\"text-center\">" + obj.id + "</td><td class=\"text-center\">" + obj.nick_name + "</td><td class=\"text-center\">" + sex + "</td><td class=\"text-center\">" + obj.city + "</td><td class=\"text-center\">" + obj.friend_total + "</td><td class=\"text-center\">" + obj.send_success_count + "次</td><td class=\"text-center\">" + obj.send_fail_count + "次</td><td class=\"text-center\">" + obj.count + "</td><td class=\"text-center\">" + obj.createtime + "</td></tr>");
+                });
+                Page(data.pageNum, data.pages);
+            });
+    }
+
+    get_client();
+
+    function Page(pageNum, pages) {
+        var options = {
+            bootstrapMajorVersion: 3,//对应的bootstrap版本
+            currentPage: pageNum,//当前页数
+            numberOfPages: 5,//每页页数
+            totalPages: pages,//总页数
+            tooltipTitles: function (type, page, current) {
+                switch (type) {
+                    case "first":
+                        return "首页";
+                    case "prev":
+                        return "上一页";
+                    case "next":
+                        return "下一页";
+                    case "last":
+                        return "末页";
+                    case "page":
+                        return page;
+                }
+            },
+            onPageClicked: function (event, originalEvent, type, page) {
+                $.getJSON("/client/get_all_client",{"page": "" + page +"", "rows": "10"},
+                    function (data) {
+                        $("#client").empty();
+                        $.each(data.list, function (i, obj) {
+                            var sex
+                            if (obj.sex == "1") {
+                                sex = "男";
+                            } else if (obj.sex == "2"){
+                                sex = "女";
+                            }else {
+                                sex = "保密";
+                            }
+                            var see = "<a target='_blank' href='http://127.0.0.1:8091/client_friends?client_id="+obj.id+"'>查看</a>"
+
+                            $("#client").append("<tr><td class=\"text-center\">" + obj.id + "</td><td class=\"text-center\">" + obj.nick_name + "</td><td class=\"text-center\">" + sex + "</td><td class=\"text-center\">" + obj.city + "</td><td class=\"text-center\">" + obj.friend_total + "</td><td class=\"text-center\">" + obj.send_success_count + "次</td><td class=\"text-center\">" + obj.send_fail_count + "次</td><td class=\"text-center\">" + obj.count + "</td><td class=\"text-center\">" + obj.createtime + "</td></tr>");
+                        });
+                    });
+            }
+        }
+        $('#bp-3-element-sm-test').bootstrapPaginator(options);
+    }
+</script>
+</body>
+</html>
