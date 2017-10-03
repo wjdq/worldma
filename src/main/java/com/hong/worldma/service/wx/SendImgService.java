@@ -84,6 +84,7 @@ public class SendImgService {
                         }
                     } catch (IOException e) {
                         logger.error("----------------------SendImg--reqUrlERROE", e);
+                        return;
                     }
 //                    }
                     //当前线程睡眠3秒在进行群发
@@ -96,7 +97,7 @@ public class SendImgService {
                     ///推送“扫码者已退出登录，或扫码者与微信服务器链接不正常，无法继续群发消息”信息
 
                     logger.error("----------------------sendText------扫码者已退出登录，或扫码者与微信服务器链接不正常，无法继续群发消息");
-                    break;
+                    return;
                 }
             }
         } else {
