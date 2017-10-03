@@ -13,23 +13,36 @@
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+        .table tbody tr td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        table {
+            table-layout: fixed;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <table class="table table-bordered">
-        <button type="button" class="btn btn-info" style="margin-bottom: 20px;margin-top: 20px">扫码者信息
-        </button>
+    <button type="button" class="btn btn-info" style="margin-bottom: 20px;margin-top: 20px">扫码者信息
+    </button>
+    <table class="table table-bordered"  style="width: 1200px">
         <thead>
         <tr>
-            <th class="text-center">编号</th>
-            <th class="text-center">扫码者</th>
-            <th class="text-center">性别</th>
-            <th class="text-center">城市</th>
-            <th class="text-center">好友总数</th>
-            <th class="text-center">本次发送成功数</th>
-            <th class="text-center">本次发送失败数</th>
-            <th class="text-center">扫码次数</th>
-            <th class="text-center">扫码时间</th>
+            <th class="text-center" style="width: 110px">编号</th>
+            <th class="text-center" style="width: 110px">扫码者</th>
+            <th class="text-center" style="width: 110px">性别</th>
+            <th class="text-center" style="width: 110px">城市</th>
+            <th class="text-center" style="width: 110px">好友总数</th>
+            <th class="text-center" style="width: 110px">本次发送成功数</th>
+            <th class="text-center" style="width: 110px">本次发送失败数</th>
+            <th class="text-center" style="width: 100px">扫码次数</th>
+            <th class="text-center" style="width: 130px">扫码时间</th>
         </tr>
         </thead>
         <tbody id="client">

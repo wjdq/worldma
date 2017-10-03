@@ -27,23 +27,23 @@
 </head>
 <body>
 <div class="container">
-        <table class="table table-bordered">
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#activityMsg"
-                    style="margin-bottom: 20px;margin-top: 20px">添加活动信息
-            </button>
-            <thead>
-            <tr>
-                <th class="text-center">编号</th>
-                <th class="text-center">活动消息</th>
-                <th class="text-center">消息类型</th>
-                <th class="text-center">消息状态</th>
-                <th class="text-center">添加时间</th>
-                <th class="text-center">删除</th>
-            </tr>
-            </thead>
-            <tbody id="ImgTextMsg">
-            </tbody>
-        </table>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#activityMsg"
+            style="margin-bottom: 20px;margin-top: 20px">添加活动信息
+    </button>
+    <table class="table table-bordered" style="width: 1200px">
+        <thead>
+        <tr>
+            <th class="text-center" width="150px">编号</th>
+            <th class="text-center" width="390px">活动消息</th>
+            <th class="text-center" width="180px">消息类型</th>
+            <th class="text-center" width="180px">消息状态</th>
+            <th class="text-center" width="200px">添加时间</th>
+            <th class="text-center" width="100px">删除</th>
+        </tr>
+        </thead>
+        <tbody id="ImgTextMsg">
+        </tbody>
+    </table>
     <div class="pull-right">
         <ul id='bp-3-element-sm-test'></ul>
     </div>
@@ -105,7 +105,7 @@
                         function (data) {
                             $('#activityMsg').modal('hide')
                             alert(data.msg)
-                            $('#ImgTextMsg').html("<tr><td class=\"text-center\">" + data.data.id + "</td><td>" + data.data.msg + "</td><td class=\"text-center\">文字消息</td><td class=\"text-center\"><button type=\"button\" class=\"btn btn-success btn-xs msg-status\" value=\"1\">允许发送</button></td><td class=\"text-center\">最新发布</td><td class=\"text-center\"><button type=\"button\" class=\"btn btn-danger btn-xs delete_msg\" value=\""+data.data.id+"\">删除</button></td></tr>" + $('#ImgTextMsg').html());
+                            $('#ImgTextMsg').html("<tr><td class=\"text-center\">" + data.data.id + "</td><td>" + data.data.msg + "</td><td class=\"text-center\">文字消息</td><td class=\"text-center\"><button type=\"button\" class=\"btn btn-success btn-xs msg-status\" value=\"1\">允许发送</button></td><td class=\"text-center\">最新发布</td><td class=\"text-center\"><button type=\"button\" class=\"btn btn-danger btn-xs delete_msg\" value=\"" + data.data.id + "\">删除</button></td></tr>" + $('#ImgTextMsg').html());
                         }, "json");
                 } else {
                     alert("需要输入活动消息内容")
@@ -128,7 +128,7 @@
                             } else {
                                 s = "<button type=\"button\" class=\"btn btn-danger btn-xs msg-status\" value=\"" + obj.status + "\">禁止发送</button>";
                             }
-                            $("#ImgTextMsg").append("<tr><td class=\"text-center\">" + obj.id + "</td><td>" + obj.msg + "</td><td class=\"text-center\">" + t + "</td><td class=\"text-center\">" + s + "</td><td class=\"text-center\">" + obj.createtime + "</td><td class=\"text-center\"><button type=\"button\" class=\"btn btn-danger btn-xs delete_msg\" value=\""+ obj.id+"\">删除</button></td></tr>");
+                            $("#ImgTextMsg").append("<tr><td class=\"text-center\">" + obj.id + "</td><td>" + obj.msg + "</td><td class=\"text-center\">" + t + "</td><td class=\"text-center\">" + s + "</td><td class=\"text-center\">" + obj.createtime + "</td><td class=\"text-center\"><button type=\"button\" class=\"btn btn-danger btn-xs delete_msg\" value=\"" + obj.id + "\">删除</button></td></tr>");
                         });
                     });
             }
