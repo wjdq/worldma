@@ -58,6 +58,9 @@ worldma.properties和logback.xml中图片和日志存储路径<br />
 **微信号**：**317430678**
 
 <br />
+
+![world ma](https://github.com/shuicheng/worldma/raw/master/img/hong.png)
+
 <br />
 <br />
 
