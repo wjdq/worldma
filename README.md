@@ -1,4 +1,11 @@
 # Hello World码
+<br />
+<br />
+
+**全网首家开放源代码的微信扫码群发系统--“World码”**
+
+<br />
+<br />
 
 ![world ma](https://github.com/shuicheng/worldma/raw/master/img/5.PNG)  
 
@@ -34,12 +41,18 @@ World码是一款微信扫码群发软件，由程序开发者hong基于微信�
 
 # “world码”说明
 
-1.该项目处于开发阶段，如果你在使用中发现问题，请通过下面的方式联系我<br />
+1.该项目处于开发阶段，如果你在使用中发现问题，请通过下面的方式联系我<br /><br />
 2.如果你在非windows系统中运行该项目，请修改一下配置文件中<br />
 worldma.properties和logback.xml中图片和日志存储路径<br />
 <br />
 <br />
+<br />
 
+**3.重要说明：该版本是面向个人用户的版本，提供文字、图片消息的扫码群发**<br />
+**和扫码结果查看功能，目前该项目不支持无痕发送**
+
+<br />
+<br />
 # “world码”联系方式
 <br />
 
